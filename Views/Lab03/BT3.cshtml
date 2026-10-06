@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script language="JavaScript" src="~/Scripts/MyJS/BT3.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .clock-container {
+            background-color: black;
+            padding: 40px 80px;
+        }
+
+        #clock {
+            color: aqua;
+            font-size: 5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div id="clock">00:00:00 AM</div>
+    </div>
+    <script>
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>

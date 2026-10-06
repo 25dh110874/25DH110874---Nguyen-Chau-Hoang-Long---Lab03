@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script language="JavaScript" src="~/Scripts/MyJS/BT5.js"></script>
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: darkgray;
+            border-radius: 25px;
+            padding: 3px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: purple;
+            color: white;
+            text-align: right;
+            padding-right: 15px;
+            line-height: 30px;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: width 0.1s linear;
+            box-sizing: border-box;
+        }
+        button {
+            text-align:center;
+            font-size: 16px;
+            border: none;
+            background-color: cornflowerblue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+            button:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Thanh Progress Tiến Trình</h2>
+
+        <div class="progress-container">
+            <div id="my-progress" class="progress-bar">0%</div>
+        </div>
+
+        <button id="start-btn" onclick="startProgress()">Bắt đầu chạy</button>
+    </div>
+</body>
+</html>

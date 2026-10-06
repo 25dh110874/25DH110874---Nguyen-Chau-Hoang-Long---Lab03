@@ -1,0 +1,175 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script language="JavaScript" src="~/Scripts/MyJS/BT2.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .form-container {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px 10px;
+            vertical-align: top;
+            width: 50%;
+        }
+
+        label {
+            font-size: 12px;
+            color: #666;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+            /* Khi input được focus (giống viền xanh ô Tên trong hình) */
+            input[type="text"]:focus {
+                border-color: teal;
+            }
+
+        /* Vùng hiển thị lỗi ngay dưới textbox */
+        .error-message {
+            color: red;
+            font-size: 11px;
+            margin-top: 3px;
+            min-height: 15px; /* Giữ chỗ để không bị giật giao diện khi hiện lỗi */
+        }
+
+        /* Định dạng các nút bấm */
+        .btn {
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            font-size: 13px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .btn-blue {
+            background-color: blue;
+        }
+
+        .btn-green {
+            background-color: forestgreen;
+        }
+
+        .btn-red {
+            background-color: orangered;
+            padding: 8px 24px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Thông tin giao hàng</h2>
+
+        <form id="shippingForm" onsubmit="return handleSave(event)">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Tên</label>
+                        <input type="text" id="name" onblur="validateRequired('name', 'Tên không được để trống')">
+                        <div id="error-name" class="error-message"></div>
+                    </td>
+                    <td>
+                        <label for="address">Địa chỉ nhận hàng</label>
+                        <input type="text" id="address" onblur="validateRequired('address', 'Địa chỉ không được để trống')">
+                        <div id="error-address" class="error-message"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="phone">Số điện thoại</label>
+                        <input type="text" id="phone" onblur="validatePhone()">
+                        <div id="error-phone" class="error-message"></div>
+                    </td>
+                    <td>
+                        <label for="province">Tỉnh / Thành phố</label>
+                        <input type="text" id="province" onblur="validateRequired('province', 'Tỉnh/Thành phố không được để trống')">
+                        <div id="error-province" class="error-message"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <label for="district">Quận / Huyện</label>
+                        <input type="text" id="district" onblur="validateRequired('district', 'Quận/Huyện không được để trống')">
+                        <div id="error-district" class="error-message"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <label for="ward">Phường / Xã</label>
+                        <input type="text" id="ward" onblur="validateRequired('ward', 'Phường/Xã không được để trống')">
+                        <div id="error-ward" class="error-message"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <label>Lựa chọn tên cho địa chỉ thường dùng</label>
+                        <button type="button" class="btn btn-blue" onclick="selectAddressType('Văn phòng')">Văn phòng</button>
+                        <button type="button" class="btn btn-green" onclick="selectAddressType('Nhà riêng')">Nhà riêng</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <br>
+                        <button type="submit" class="btn btn-red">Lưu</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

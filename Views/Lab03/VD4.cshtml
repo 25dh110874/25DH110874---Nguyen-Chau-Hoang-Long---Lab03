@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script type="text/javascript">
+        function TinhTien() {
+            var dg = parseFloat(document.getElementById("dg").value);
+            var sl = parseFloat(document.getElementById("sl").value);
+            window.document.getElementById("tt").value = dg * sl;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Đơn giá: <input type="number" id="dg" onkeyup="TinhTien();" onchange="TinhTien();" /><br />
+        Số lượng: <input type="number" id="sl" onkeyup="TinhTien();" onchange="TinhTien();" /> <br />
+        Thành tiền: <input type="text" id="tt" />
+    </form>
+</body>
+</html>

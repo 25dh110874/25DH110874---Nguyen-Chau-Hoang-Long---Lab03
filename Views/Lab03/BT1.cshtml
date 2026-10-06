@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script language="Javascript" src="~/Scripts/MyJS/BT1.js"></script>
+    <style type="text/css">
+        p{
+            font-size: 20px;
+        }
+        p_blue{
+            color:aqua;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body onload="capNhatSoTruong()">
+    <p>PHIẾU THAM GIA CLB TIN HỌC <p_blue>LUBU</p_blue></p>
+    <form onsubmit="dangKy(); return false;">
+        <table>
+            <tr>
+                <td>Mã sinh viên:</td>
+                <td><input type="text" id="maSV" placeholder="Nhập Mã SV"></td>
+                <td><span id="errMaSV" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Họ và tên:</td>
+                <td><input type="text" id="hoTen" placeholder="Nhập Họ và tên"></td>
+                <td><span id="errHoTen" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Tuổi:</td>
+                <td><input type="text" id="tuoi" placeholder="Nhập tuổi > 18"></td>
+                <td><span id="errTuoi" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Ngoại ngữ:</td>
+                <td>
+                    <input type="checkbox" name="ngoaiNgu" value="Anh"> Anh
+                    <input type="checkbox" name="ngoaiNgu" value="Pháp"> Pháp
+                    <input type="checkbox" name="ngoaiNgu" value="Nhật"> Nhật
+                </td>
+                <td><span id="txtNgoaiNgu" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Chuyên ngành:</td>
+                <td>
+                    <select id="chuyenNganh" onchange="capNhatSoTruong()">
+                        <option value="Hệ thống">Hệ thống</option>
+                        <option value="Phần mềm">Phần mềm</option>
+                        <option value="Mạng máy tính">Mạng máy tính</option>
+                    </select>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sở trường:</td>
+                <!-- Sử dụng thẻ span và định dạng chữ in nghiêng giống đề bài -->
+                <td><span id="soTruong" style="font-style: italic;"></span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Đăng ký</button>
+                </td>
+                <td><span id="msgKetQua" style="color: blue; font-weight: bold;"></span></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
